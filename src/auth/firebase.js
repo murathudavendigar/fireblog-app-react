@@ -36,7 +36,7 @@ export const register = async (email, password, fullname, navigate) => {
     await updateProfile(auth.currentUser, {
       displayName: fullname,
     });
-    console.log(user);
+    // console.log(user);
     navigate("/");
   } catch (error) {
     console.log(error);
@@ -59,7 +59,7 @@ export const logout = () => {
 };
 
 //!!!!!!!!!!!!!!!!!!!!!!!!!!!!! SIGN IN WITH GOOGLE
-export const signUpGoogle = (navigate) => {
+export const signInGoogle = (navigate) => {
   const provider = new GoogleAuthProvider();
   signInWithPopup(auth, provider)
     .then((result) => {
@@ -75,8 +75,19 @@ export const signUpGoogle = (navigate) => {
 export const userObserver = (setCurrentUser) => {
   onAuthStateChanged(auth, (user) => {
     if (user) {
-      const { email, displayName, photoURL } = user;
-      setCurrentUser({ email, displayName, photoURL });
+      const {
+        email,
+        displayName,
+        photoURL,
+        metadata: { creationTime, lastSignInTime },
+      } = user;
+      setCurrentUser({
+        email,
+        displayName,
+        photoURL,
+        creationTime,
+        lastSignInTime,
+      });
     } else {
       setCurrentUser(false);
     }

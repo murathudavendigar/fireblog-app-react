@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 
 const Dashboard = () => {
   const { isLoading, blogList } = useFetch();
+  console.log(blogList);
 
   return (
     <div className="container mx-auto">
@@ -16,13 +17,13 @@ const Dashboard = () => {
                 <Link
                   to="/details"
                   data-mdb-ripple="true"
-                  data-mdb-ripple-color="light">
+                  data-mdb-ripple-color="light"
+                  state={{ data: item.id }}>
                   <img
                     className="rounded-t-lg"
                     src={item?.imageURL || defaultImg}
                     alt=""
-                    width="850px"
-                    height="150px"
+                    style={{ width: "800px", height: "160px" }}
                   />
                   <div className="bg-gray-500">
                     <h5 className="text-gray-900 text-xl font-medium py-3 text-start pl-10">

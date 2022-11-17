@@ -5,6 +5,7 @@ import Dashboard from "../pages/Dashboard";
 import Details from "../pages/Details";
 import Login from "../pages/Login";
 import NewBlog from "../pages/NewBlog";
+import Profile from "../pages/Profile";
 import Register from "../pages/Register";
 import UpdateBlog from "../pages/UpdateBlog";
 import PrivateRouter from "./PrivateRouter";
@@ -26,6 +27,9 @@ const AppRouter = () => {
           </Route>
           <Route path="/updateblog" element={<PrivateRouter />}>
             <Route path="" element={<UpdateBlog />} />
+          </Route>
+          <Route path="/profile" element={<PrivateRouter />}>
+            <Route path="" element={<Profile />} />
           </Route>
         </Routes>
       </BrowserRouter>

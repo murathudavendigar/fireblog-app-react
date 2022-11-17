@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { register } from "../auth/firebase";
+import { register, signInGoogle } from "../auth/firebase";
 
 const Register = () => {
   const [loading, setLoading] = useState(false);
@@ -12,12 +12,15 @@ const Register = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setLoading(true);
-    //  const displayName = `${firstName} ${lastName}`;
-    const displayName = "asd";
+
     setTimeout(() => {
-      register(registerEmail, registerPassword, displayName, navigate);
+      register(registerEmail, registerPassword, fullName, navigate);
       setLoading(false);
     }, 3000);
+  };
+
+  const signInWithGoogle = () => {
+    signInGoogle(navigate);
   };
 
   return (
@@ -41,7 +44,10 @@ const Register = () => {
             <div className="xl:ml-20 xl:w-5/12 lg:w-5/12 md:w-8/12 mb-12 md:mb-0">
               <form onSubmit={handleSubmit}>
                 <div className="flex flex-row items-center justify-center  ">
-                  <button type="button" class="login-with-google-btn">
+                  <button
+                    type="button"
+                    class="login-with-google-btn"
+                    onClick={signInWithGoogle}>
                     Sign in with Google
                   </button>
                 </div>

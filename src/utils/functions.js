@@ -41,3 +41,22 @@ export const useFetch = () => {
   }, []);
   return { isLoading, blogList };
 };
+
+//!!!!!!!!!!!!!!!!!!!!!!!!!!!!! GET BLOG BY ID
+
+export const useFetchById = (id) => {
+  const [isLoading, setIsLoading] = useState(true);
+  const [blogList, setBlogList] = useState();
+  useEffect(() => {
+    const db = getDatabase(myFirebaseApp);
+    const userRef = ref(db, `blogs/${id}`);
+
+    onValue(userRef, (snapshot) => {
+      const data = snapshot.val();
+
+      setBlogList(data);
+      setIsLoading(false);
+    });
+  }, []);
+  return { isLoading, blogList };
+};

@@ -6,6 +6,7 @@ import { logout } from "../auth/firebase";
 
 const Navbar = () => {
   const { userContext } = useAuthContext();
+  console.log(userContext);
 
   return (
     <>

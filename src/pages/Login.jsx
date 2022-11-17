@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { login } from "../auth/firebase";
+import { login, signInGoogle } from "../auth/firebase";
 import "../index.css";
 
 const Login = () => {
@@ -16,6 +16,10 @@ const Login = () => {
       login(loginEmail, loginPassword, navigate);
       setLoading(false);
     }, 3000);
+  };
+
+  const signInWithGoogle = () => {
+    signInGoogle(navigate);
   };
 
   return (
@@ -40,7 +44,10 @@ const Login = () => {
             <div className="xl:ml-20 xl:w-5/12 lg:w-5/12 md:w-8/12 mb-12 md:mb-0">
               <form onSubmit={handleSubmit}>
                 <div className="flex flex-row items-center justify-center  ">
-                  <button type="button" class="login-with-google-btn">
+                  <button
+                    type="button"
+                    class="login-with-google-btn"
+                    onClick={signInWithGoogle}>
                     Sign in with Google
                   </button>
                 </div>
