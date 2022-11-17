@@ -1,5 +1,6 @@
-import { BrowserRouter, Router, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Navbar from "../components/Navbar";
+import AuthContext from "../context/AuthContext";
 import Dashboard from "../pages/Dashboard";
 import Details from "../pages/Details";
 import Login from "../pages/Login";
@@ -8,17 +9,19 @@ import PrivateRouter from "./PrivateRouter";
 
 const AppRouter = () => {
   return (
-    <BrowserRouter>
-      <Navbar />
-      <Routes>
-        <Router path="/" elements={<Dashboard />} />
-        <Router path="/login" elements={<Login />} />
-        <Router path="/register" elements={<Register />} />
-        <Router path="/details" elements={<PrivateRouter />}>
-          <Router path="" elements={<Details />} />
-        </Router>
-      </Routes>
-    </BrowserRouter>
+    <AuthContext>
+      <BrowserRouter>
+        <Navbar />
+        <Routes>
+          <Route path="/" index element={<Dashboard />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/details" element={<PrivateRouter />}>
+            <Route path="" element={<Details />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </AuthContext>
   );
 };
 
