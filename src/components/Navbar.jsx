@@ -2,12 +2,14 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useAuthContext } from "../context/AuthContext";
 import defaultAvatar from "../assets/default_avatar.png";
+import { logout } from "../auth/firebase";
 
 const Navbar = () => {
   const { userContext } = useAuthContext();
 
   return (
     <>
+      <div className="h-[75px]"></div>
       <nav className="w-full flex flex-wrap items-center justify-between py-3 bg-gray-900 text-white shadow-lg navbar navbar-expand-lg fixed-top">
         <div className="container-fluid w-full flex items-center justify-between px-6">
           <Link
@@ -37,31 +39,53 @@ const Navbar = () => {
                   referrerPolicy="no-referrer"
                 />
               </span>
-              <ul
-                className="dropdown-menu min-w-max absolute bg-white text-base z-50 float-left py-2 list-none text-left rounded-lg shadow-lg mt-1 hidden m-0 bg-clip-padding border-none left-auto right-0"
-                aria-labelledby="dropdownMenuButton2">
-                <li>
-                  <Link
-                    className="dropdown-item text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-700 hover:bg-gray-100"
-                    to="/register">
-                    Register
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    className="dropdown-item text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-700 hover:bg-gray-100"
-                    to="/login">
-                    Login
-                  </Link>
-                </li>
-                <li>
-                  <span
-                    className="dropdown-item text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-700 hover:bg-gray-100"
-                    role="button">
-                    Logout
-                  </span>
-                </li>
-              </ul>
+              {userContext ? (
+                <ul
+                  className="dropdown-menu min-w-max absolute bg-white text-base z-50 float-left py-2 list-none text-left rounded-lg shadow-lg mt-1 hidden m-0 bg-clip-padding border-none left-auto right-0"
+                  aria-labelledby="dropdownMenuButton2">
+                  <li>
+                    <Link
+                      className="dropdown-item text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-700 hover:bg-gray-100"
+                      to="/profile">
+                      Profile
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      className="dropdown-item text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-700 hover:bg-gray-100"
+                      to="/newblog">
+                      New Blog
+                    </Link>
+                  </li>
+                  <li>
+                    <span
+                      className="dropdown-item text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-700 hover:bg-gray-100"
+                      role="button"
+                      onClick={() => logout()}>
+                      Logout
+                    </span>
+                  </li>
+                </ul>
+              ) : (
+                <ul
+                  className="dropdown-menu min-w-max absolute bg-white text-base z-50 float-left py-2 list-none text-left rounded-lg shadow-lg mt-1 hidden m-0 bg-clip-padding border-none left-auto right-0"
+                  aria-labelledby="dropdownMenuButton2">
+                  <li>
+                    <Link
+                      className="dropdown-item text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-700 hover:bg-gray-100"
+                      to="/register">
+                      Register
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      className="dropdown-item text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-700 hover:bg-gray-100"
+                      to="/login">
+                      Login
+                    </Link>
+                  </li>
+                </ul>
+              )}
             </div>
           </div>
         </div>
