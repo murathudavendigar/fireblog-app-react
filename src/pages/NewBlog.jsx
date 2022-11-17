@@ -4,11 +4,13 @@ import { addBlog } from "../utils/functions";
 
 const NewBlog = () => {
   const { userContext } = useAuthContext();
+  const dateNow = new Date().toDateString().slice(4);
   const initialValues = {
     title: "",
     imageURL: "",
     content: "",
     author: userContext.email || "",
+    date: dateNow,
   };
 
   const [info, setInfo] = useState(initialValues);
@@ -20,6 +22,7 @@ const NewBlog = () => {
   console.log(info);
 
   const handleSubmit = (e) => {
+    console.log(dateNow);
     e.preventDefault();
     addBlog(info);
   };

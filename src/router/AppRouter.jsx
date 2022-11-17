@@ -6,6 +6,7 @@ import Details from "../pages/Details";
 import Login from "../pages/Login";
 import NewBlog from "../pages/NewBlog";
 import Register from "../pages/Register";
+import UpdateBlog from "../pages/UpdateBlog";
 import PrivateRouter from "./PrivateRouter";
 
 const AppRouter = () => {
@@ -17,9 +18,14 @@ const AppRouter = () => {
           <Route path="/" index element={<Dashboard />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/newblog" element={<NewBlog />} />
+          <Route path="/newblog" element={<PrivateRouter />}>
+            <Route path="" element={<NewBlog />} />
+          </Route>
           <Route path="/details" element={<PrivateRouter />}>
             <Route path="" element={<Details />} />
+          </Route>
+          <Route path="/updateblog" element={<PrivateRouter />}>
+            <Route path="" element={<UpdateBlog />} />
           </Route>
         </Routes>
       </BrowserRouter>

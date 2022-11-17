@@ -15,6 +15,7 @@ export const addBlog = (infoBlog) => {
     imageURL: infoBlog.imageURL,
     content: infoBlog.content,
     author: infoBlog.author,
+    date: infoBlog.date,
   });
 };
 
