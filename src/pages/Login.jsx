@@ -11,7 +11,11 @@ const Login = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    login(loginEmail, loginPassword, navigate);
+    setLoading(true);
+    setTimeout(() => {
+      login(loginEmail, loginPassword, navigate);
+      setLoading(false);
+    }, 3000);
   };
 
   return (
@@ -83,8 +87,7 @@ const Login = () => {
                 <div className="text-center ">
                   <button
                     type="submit"
-                    className="inline-block px-7 py-3 bg-blue-600 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out w-1/2"
-                    onClick={() => setLoading(!loading)}>
+                    className="inline-block px-7 py-3 bg-blue-600 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out w-1/2">
                     {loading ? (
                       <>
                         <svg
