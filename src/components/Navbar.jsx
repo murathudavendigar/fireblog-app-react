@@ -6,7 +6,7 @@ import { logout } from "../auth/firebase";
 
 const Navbar = () => {
   const { userContext } = useAuthContext();
-  console.log(userContext);
+  // console.log(userContext);
 
   return (
     <>
@@ -14,9 +14,9 @@ const Navbar = () => {
       <nav className="w-full flex flex-wrap items-center justify-between py-3 bg-gray-900 text-white shadow-lg navbar navbar-expand-lg fixed-top">
         <div className="container-fluid w-full flex items-center justify-between px-6">
           <Link
-            className="text-2xl  pr-2 font-semibold flex items-center gap-3"
+            className="md:text-2xl text-sm  pr-2 font-semibold flex items-center gap-3"
             to="/">
-            Captain Price Blog
+            CP Blog
           </Link>
 
           <div className="flex items-center relative">

@@ -3,6 +3,28 @@
 @tailwind utilities;
 @import url("https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900");
 
+body {
+  background: linear-gradient(
+    to right,
+    #1e5799 0%,
+    #2ce0bf 19%,
+    #76dd2c 40%,
+    #dba62b 60%,
+    #e02cbf 83%,
+    #1e5799 100%
+  );
+  background-size: 10000px 100%;
+  animation: bg 15s linear infinite;
+}
+@keyframes bg {
+  0% {
+    background-position-x: 0;
+  }
+  100% {
+    background-position-x: 10000px;
+  }
+}
+
 .login-with-google-btn {
   transition: background-color 0.3s, box-shadow 0.3s;
   padding: 12px 16px 12px 42px;

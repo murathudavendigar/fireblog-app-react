@@ -89,7 +89,7 @@ export const updateBlog = (info, id) => {
   const db = getDatabase(myFirebaseApp);
 
   const updates = {};
-  updates[`blogs/${id}`] = info;
+  updates["blogs/" + id] = info;
 
   return update(ref(db), updates);
 };
