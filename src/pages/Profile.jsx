@@ -55,7 +55,7 @@ const Profile = () => {
                 <Link
                   className="text-xs text-indigo-500 italic hover:underline hover:text-indigo-600 font-medium"
                   to="/">
-                  View Profile
+                  Go Dashboard
                 </Link>
               </div>
             </div>

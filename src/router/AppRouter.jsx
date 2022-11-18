@@ -4,6 +4,7 @@ import AuthContext from "../context/AuthContext";
 import Dashboard from "../pages/Dashboard";
 import Details from "../pages/Details";
 import Login from "../pages/Login";
+import LoginFormik from "../pages/LoginFormik";
 import NewBlog from "../pages/NewBlog";
 import Profile from "../pages/Profile";
 import Register from "../pages/Register";
@@ -17,6 +18,7 @@ const AppRouter = () => {
         <Navbar />
         <Routes>
           <Route path="/" index element={<Dashboard />} />
+          <Route path="/loginformik" index element={<LoginFormik />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/newblog" element={<PrivateRouter />}>

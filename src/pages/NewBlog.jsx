@@ -1,9 +1,12 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { useAuthContext } from "../context/AuthContext";
 import { addBlog } from "../utils/functions";
 
 const NewBlog = () => {
   const { userContext } = useAuthContext();
+  const navigate = useNavigate();
+
   const dateNow = new Date().toDateString().slice(4);
   const initialValues = {
     title: "",
@@ -19,12 +22,11 @@ const NewBlog = () => {
     const { name, value } = e.target;
     setInfo({ ...info, [name]: value });
   };
-  console.log(info);
 
   const handleSubmit = (e) => {
-    console.log(dateNow);
     e.preventDefault();
-    addBlog(info);
+
+    addBlog(info, navigate);
   };
 
   return (

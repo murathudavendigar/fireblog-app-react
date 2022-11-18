@@ -1,10 +1,19 @@
 import myFirebaseApp from "../auth/firebase";
-import { getDatabase, onValue, push, ref, set } from "firebase/database";
+import {
+  getDatabase,
+  onValue,
+  push,
+  ref,
+  remove,
+  set,
+  update,
+} from "firebase/database";
 import { useEffect, useState } from "react";
+import { toastSuccessNotify, toastWarnNotify } from "../helpers/toastNotify";
 
 //!!!!!!!!!!!!!!!!!!!!!!!!!!!!! ADD BLOG
 
-export const addBlog = (infoBlog) => {
+export const addBlog = (infoBlog, navigate) => {
   const db = getDatabase(myFirebaseApp);
 
   const blogRef = ref(db, "blogs/");
@@ -17,6 +26,9 @@ export const addBlog = (infoBlog) => {
     author: infoBlog.author,
     date: infoBlog.date,
   });
+
+  toastSuccessNotify("Your blog added !!");
+  navigate("/");
 };
 
 //!!!!!!!!!!!!!!!!!!!!!!!!!!!!! GET BLOG
@@ -59,4 +71,25 @@ export const useFetchById = (id) => {
     });
   }, []);
   return { isLoading, blogList };
+};
+
+//!!!!!!!!!!!!!!!!!!!!!!!!!!!!! DELETE BLOG
+
+export const deleteBlog = (id, navigate) => {
+  const db = getDatabase(myFirebaseApp);
+
+  remove(ref(db, "blogs/" + id));
+  toastWarnNotify("Your blog has been deleted !!");
+  navigate("/");
+};
+
+//!!!!!!!!!!!!!!!!!!!!!!!!!!!!! UPDATE BLOG
+
+export const updateBlog = (info, id) => {
+  const db = getDatabase(myFirebaseApp);
+
+  const updates = {};
+  updates[`blogs/${id}`] = info;
+
+  return update(ref(db), updates);
 };
