@@ -9,6 +9,7 @@ import {
   signOut,
   updateProfile,
 } from "firebase/auth";
+import { toastSuccessNotify } from "../helpers/toastNotify";
 
 //!!!!!!!!!!!!!!!!!!!!!!!!!!!!! APP INFO
 
@@ -26,12 +27,12 @@ const myFirebaseApp = initializeApp(firebaseConfig);
 
 export default myFirebaseApp;
 
-const auth = getAuth(myFirebaseApp);
+export const auth = getAuth(myFirebaseApp);
 
 //!!!!!!!!!!!!!!!!!!!!!!!!!!!!! REGISTER
 export const register = async (email, password, fullname, navigate) => {
   try {
-    let user = await createUserWithEmailAndPassword(auth, email, password);
+    await createUserWithEmailAndPassword(auth, email, password);
 
     await updateProfile(auth.currentUser, {
       displayName: fullname,
@@ -48,6 +49,9 @@ export const login = async (email, password, navigate) => {
   try {
     await signInWithEmailAndPassword(auth, email, password);
     navigate("/");
+    toastSuccessNotify(
+      `Welcome ${auth?.currentUser?.displayName || auth?.currentUser?.email}`
+    );
   } catch (error) {
     alert(error.message);
   }
@@ -56,6 +60,7 @@ export const login = async (email, password, navigate) => {
 //!!!!!!!!!!!!!!!!!!!!!!!!!!!!! LOGOUT
 export const logout = () => {
   signOut(auth);
+  toastSuccessNotify("Have a good one !");
 };
 
 //!!!!!!!!!!!!!!!!!!!!!!!!!!!!! SIGN IN WITH GOOGLE
@@ -63,8 +68,9 @@ export const signInGoogle = (navigate) => {
   const provider = new GoogleAuthProvider();
   signInWithPopup(auth, provider)
     .then((result) => {
-      console.log(result);
+      // console.log(result);
       navigate("/");
+      toastSuccessNotify(`Welcome ${result?.user?.displayName}`);
     })
     .catch((error) => {
       console.log(error);

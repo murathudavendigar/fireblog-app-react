@@ -25,6 +25,8 @@ export const addBlog = (infoBlog, navigate) => {
     content: infoBlog.content,
     author: infoBlog.author,
     date: infoBlog.date,
+    fullName: infoBlog.fullName,
+    photoAuthor: infoBlog.photoAuthor,
   });
 
   toastSuccessNotify("Your blog added !!");
@@ -69,7 +71,7 @@ export const useFetchById = (id) => {
       setBlogList(data);
       setIsLoading(false);
     });
-  }, []);
+  }, [id]);
   return { isLoading, blogList };
 };
 
@@ -90,6 +92,6 @@ export const updateBlog = (info, id) => {
 
   const updates = {};
   updates["blogs/" + id] = info;
-
+  toastSuccessNotify("Updated this blog!!");
   return update(ref(db), updates);
 };

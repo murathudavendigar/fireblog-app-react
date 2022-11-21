@@ -14,6 +14,8 @@ const NewBlog = () => {
     content: "",
     author: userContext.email || "",
     date: dateNow,
+    fullName: userContext.displayName || "",
+    photoAuthor: userContext.photoURL || "",
   };
 
   const [info, setInfo] = useState(initialValues);

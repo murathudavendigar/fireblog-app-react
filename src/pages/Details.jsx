@@ -32,10 +32,11 @@ const Details = () => {
               <h5 className="text-gray-100 text-4xl font-medium py-3 text-center pl-10">
                 {blogList?.title}
               </h5>
-              <h3 className="text-start text-gray-100 pl-10 mb-3">
+              <h3 className="text-start text-gray-100 pl-10 mb-3 border-b-2 mx-4">
                 <em> {blogList?.date}</em>
               </h3>
-              <p className="text-gray-100 text-base mb-3 pb-4 text-start pl-10 mr-4">
+
+              <p className="text-gray-100 text-base mb-3 pb-4 text-start indent-5 pl-10 mr-4 ">
                 {blogList?.content}
               </p>
             </div>

@@ -11,7 +11,7 @@ const Navbar = () => {
   return (
     <>
       <div className="h-[75px]"></div>
-      <nav className="w-full flex flex-wrap items-center justify-between py-3 bg-gray-900 text-white shadow-lg navbar navbar-expand-lg fixed-top">
+      <nav className="w-full flex flex-wrap items-center justify-between py-3 bg-gray-600 text-white shadow-lg navbar navbar-expand-lg fixed-top">
         <div className="container-fluid w-full flex items-center justify-between px-6">
           <Link
             className="md:text-2xl text-sm  pr-2 font-semibold flex items-center gap-3"

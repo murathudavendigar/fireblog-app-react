@@ -1,25 +1,24 @@
-import React, { useEffect, useState } from "react";
-import { Navigate, useLocation, useNavigate } from "react-router-dom";
-import { useAuthContext } from "../context/AuthContext";
+import React, { useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
+
 import { updateBlog, useFetchById } from "../utils/functions";
 
 const UpdateBlog = () => {
-  const { userContext } = useAuthContext();
   const navigate = useNavigate();
   const location = useLocation();
   const updatedBlogId = location.state;
   const { blogList } = useFetchById(updatedBlogId);
-  const [info, setInfo] = useState();
+  const [info, setInfo] = useState(blogList);
   const [updateContent, setUpdateContent] = useState();
   const [updateTitle, setUpdateTitle] = useState();
   const [updateImageURL, setUpdateImageURL] = useState();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const id = location.state;
+
     editBlog(updateTitle, updateImageURL, updateContent);
 
-    updateBlog(info, id);
+    updateBlog(info, updatedBlogId);
     navigate(-1);
   };
 

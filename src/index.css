@@ -4,7 +4,7 @@
 @import url("https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900");
 
 body {
-  background: linear-gradient(
+  /* background: linear-gradient(
     to right,
     #1e5799 0%,
     #2ce0bf 19%,
@@ -22,7 +22,15 @@ body {
   }
   100% {
     background-position-x: 10000px;
-  }
+  } */
+
+  background: linear-gradient(
+    to right,
+    rgba(59, 173, 227, 1) 0%,
+    rgba(87, 111, 230, 1) 25%,
+    rgba(152, 68, 183, 1) 51%,
+    rgba(255, 53, 127, 1) 100%
+  );
 }
 
 .login-with-google-btn {
@@ -117,7 +125,59 @@ body {
 
 .dashboard-content {
   display: -webkit-box;
-  -webkit-line-clamp: 2; /*Kaç Stırda sınırlamak istiyorsanız */
+  -webkit-line-clamp: 2; /*Kaç satırda sınırlamak istiyoruz ? */
   -webkit-box-orient: vertical;
   overflow: hidden;
+}
+
+@keyframes lights {
+  0% {
+    color: hsl(230, 40%, 80%);
+    text-shadow: 0 0 1em hsla(320, 100%, 50%, 0.2),
+      0 0 0.125em hsla(320, 100%, 60%, 0.3),
+      -1em -0.125em 0.5em hsla(40, 100%, 60%, 0),
+      1em 0.125em 0.5em hsla(200, 100%, 60%, 0);
+  }
+
+  30% {
+    color: hsl(230, 80%, 90%);
+    text-shadow: 0 0 1em hsla(320, 100%, 50%, 0.5),
+      0 0 0.125em hsla(320, 100%, 60%, 0.5),
+      -0.5em -0.125em 0.25em hsla(40, 100%, 60%, 0.2),
+      0.5em 0.125em 0.25em hsla(200, 100%, 60%, 0.4);
+  }
+
+  40% {
+    color: hsl(230, 100%, 95%);
+    text-shadow: 0 0 1em hsla(320, 100%, 50%, 0.5),
+      0 0 0.125em hsla(320, 100%, 90%, 0.5),
+      -0.25em -0.125em 0.125em hsla(40, 100%, 60%, 0.2),
+      0.25em 0.125em 0.125em hsla(200, 100%, 60%, 0.4);
+  }
+
+  70% {
+    color: hsl(230, 80%, 90%);
+    text-shadow: 0 0 1em hsla(320, 100%, 50%, 0.5),
+      0 0 0.125em hsla(320, 100%, 60%, 0.5),
+      0.5em -0.125em 0.25em hsla(40, 100%, 60%, 0.2),
+      -0.5em 0.125em 0.25em hsla(200, 100%, 60%, 0.4);
+  }
+
+  100% {
+    color: hsl(230, 40%, 80%);
+    text-shadow: 0 0 1em hsla(320, 100%, 50%, 0.2),
+      0 0 0.125em hsla(320, 100%, 60%, 0.3),
+      1em -0.125em 0.5em hsla(40, 100%, 60%, 0),
+      -1em 0.125em 0.5em hsla(200, 100%, 60%, 0);
+  }
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Press+Start+2P&display=swap");
+
+.dashboard-text {
+  font-size: 3rem;
+  font-weight: 300;
+  animation: lights 5s 750ms linear infinite;
+  /* font-family: "Orbitron", sans-serif; */
+  font-family: "Press Start 2P", cursive;
 }
