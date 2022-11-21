@@ -9,7 +9,7 @@ import {
   signOut,
   updateProfile,
 } from "firebase/auth";
-import { toastSuccessNotify } from "../helpers/toastNotify";
+import { toastErrorNotify, toastSuccessNotify } from "../helpers/toastNotify";
 
 //!!!!!!!!!!!!!!!!!!!!!!!!!!!!! APP INFO
 
@@ -60,7 +60,7 @@ export const login = async (email, password, navigate) => {
 //!!!!!!!!!!!!!!!!!!!!!!!!!!!!! LOGOUT
 export const logout = () => {
   signOut(auth);
-  toastSuccessNotify("Have a good one !");
+  toastErrorNotify("Logged Out!!");
 };
 
 //!!!!!!!!!!!!!!!!!!!!!!!!!!!!! SIGN IN WITH GOOGLE
