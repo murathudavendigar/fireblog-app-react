@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuthContext } from "../context/AuthContext";
+import { toastErrorNotify } from "../helpers/toastNotify";
 import { addBlog } from "../utils/functions";
 
 const NewBlog = () => {
@@ -27,8 +28,13 @@ const NewBlog = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    addBlog(info, navigate);
+    if (!info.title) {
+      toastErrorNotify("Please fill the title area");
+    } else if (!info.content) {
+      toastErrorNotify("Please fill the content area");
+    } else {
+      addBlog(info, navigate);
+    }
   };
 
   return (
@@ -127,7 +133,7 @@ const NewBlog = () => {
       active:bg-blue-800 active:shadow-lg
       transition
       duration-150
-      ease-in-out">
+      ease-in-out cursor-pointer">
             Add Blog
           </button>
         </form>
