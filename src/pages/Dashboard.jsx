@@ -61,7 +61,7 @@ const Dashboard = () => {
     "#6666FF",
   ];
   let randomNumber;
-  console.log(blogList);
+
   return (
     <div className="container mx-auto">
       {isLoading ? (
