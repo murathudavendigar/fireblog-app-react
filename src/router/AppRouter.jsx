@@ -32,6 +32,7 @@ const AppRouter = () => {
           <Route path="/profile" element={<PrivateRouter />}>
             <Route path="" element={<Profile />} />
           </Route>
+          <Route path="*" element={<Dashboard />} />
         </Routes>
       </BrowserRouter>
     </AuthContext>
