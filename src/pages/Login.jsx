@@ -125,7 +125,7 @@ const Login = () => {
                     Don't have an account?
                     <Link
                       to="/register"
-                      className="text-white-600 hover:text-white-700 focus:text-white-700 transition duration-200 ease-in-out">
+                      className="text-white hover:text-green-700 focus:text-green-700 transition duration-200 ease-in-out">
                       Register
                     </Link>
                   </p>
