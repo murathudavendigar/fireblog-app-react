@@ -9,7 +9,11 @@ import {
   signOut,
   updateProfile,
 } from "firebase/auth";
-import { toastErrorNotify, toastSuccessNotify } from "../helpers/toastNotify";
+import {
+  toastErrorNotify,
+  toastSuccessNotify,
+  toastWarnNotify,
+} from "../helpers/toastNotify";
 
 //!!!!!!!!!!!!!!!!!!!!!!!!!!!!! APP INFO
 
@@ -40,7 +44,8 @@ export const register = async (email, password, fullname, navigate) => {
     // console.log(user);
     navigate("/");
   } catch (error) {
-    console.log(error);
+    // console.log(error);
+    toastErrorNotify("Something went wrong! Please try again!");
   }
 };
 
@@ -53,14 +58,15 @@ export const login = async (email, password, navigate) => {
       `Welcome ${auth?.currentUser?.displayName || auth?.currentUser?.email}`
     );
   } catch (error) {
-    alert(error.message);
+    // alert(error.message);
+    toastErrorNotify("Something went wrong! Please try again!");
   }
 };
 
 //!!!!!!!!!!!!!!!!!!!!!!!!!!!!! LOGOUT
 export const logout = () => {
   signOut(auth);
-  toastErrorNotify("Logged Out!!");
+  toastWarnNotify("Logged Out!!");
 };
 
 //!!!!!!!!!!!!!!!!!!!!!!!!!!!!! SIGN IN WITH GOOGLE
@@ -73,7 +79,8 @@ export const signInGoogle = (navigate) => {
       toastSuccessNotify(`Welcome ${result?.user?.displayName}`);
     })
     .catch((error) => {
-      console.log(error);
+      // console.log(error);
+      toastErrorNotify("Something went wrong! Please try again!");
     });
 };
 
