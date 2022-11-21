@@ -20,13 +20,13 @@ const Details = () => {
           <img src={loadingImg} alt="loading img" />
         </div>
       ) : (
-        <div className="flex justify-center ">
-          <div className="rounded-lg shadow-lg bg-white/50  w-1/2">
+        <div className="flex justify-center">
+          <div className="rounded-lg shadow-lg bg-white/50 w-3/4 lg:w-1/2">
             <img
               className="rounded-t-lg"
               src={blogList?.imageURL || defaultImg}
               alt=""
-              style={{ width: "700px", height: "300px" }}
+              style={{ width: "100%", height: "300px" }}
             />
             <div className="bg-gray-700 break-words">
               <h5 className="text-gray-100 text-4xl font-medium py-3 text-center pl-10">
