@@ -29,6 +29,8 @@ const UpdateBlog = () => {
       content: content || blogList?.content,
       author: blogList?.author,
       date: blogList?.date,
+      fullName: blogList?.fullName,
+      photoAuthor: blogList?.photoAuthor,
     });
   };
 
