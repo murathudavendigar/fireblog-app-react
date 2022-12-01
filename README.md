@@ -1,5 +1,7 @@
 # Project : React Fireblog App
 
+React Fireblog App is a web application where you can read and add blogs after registering with the app.
+
 ## Table of contents
 
 - [Project : React Fireblog App](#project--react-fireblog-app)
@@ -10,7 +12,9 @@
   - [Links](#links)
     - [Built with](#built-with)
     - [Useful resources](#useful-resources)
+  - [Installation](#installation)
   - [Author](#author)
+  - [Contact](#contact)
 
 ## The challenge
 
@@ -72,12 +76,14 @@ To create an advanced blog app with React and Firebase
 
 ### Built with
 
-- React Components, props, states, hooks
-- API GET,POST,DELETE and UPDATE requests (axios)
+- React Components, Props, States and Hooks
+- API GET,POST,DELETE and UPDATE requests
+- Axios
+- React-Router
+- Context API
+- Toastify
 - JSX Elements
 - CSS custom properties
-- Flexbox
-- CSS Grid
 - TailwindCSS
 - Firebase Auth
 - Firebase Database
@@ -88,6 +94,25 @@ To create an advanced blog app with React and Firebase
 - [MDN](https://developer.mozilla.org/en-US/) - This is an amazing document which helped me finally understand deep sides of web development.
 - [Firebase](https://firebase.google.com/) - This website has very understandable documentation. And I really took advantage of that.
 
+## Installation
+
+Use the Yarn package manager install command.
+
+```bash
+yarn install
+```
+
+---
+
 ## Author
 
 - Author - [Murat Hüdavendigâr]
+
+## Contact
+
+<p align="center">
+<a href="https://codepen.io/m_hudavendigar" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/codepen.svg" alt="m_hudavendigar" height="30" width="40" /></a>
+<a href="https://twitter.com/murathoncu" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/twitter.svg" alt="murathoncu" height="30" width="40" /></a>
+<a href="https://www.linkedin.com/in/murathudavendigaroncu/" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="murat-hüdavendigâr-öncü-232749246" height="30" width="40" /></a>
+<a href="https://instagram.com/m_hdavendigr" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/instagram.svg" alt="m_hdavendigr" height="30" width="40" /></a>
+</p>
