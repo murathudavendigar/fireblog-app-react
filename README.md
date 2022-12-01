@@ -1,70 +1,95 @@
-# Getting Started with Create React App
+# Project : React Fireblog App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Table of contents
 
-## Available Scripts
+- [Project : React Fireblog App](#project--react-fireblog-app)
+  - [Table of contents](#table-of-contents)
+  - [The challenge](#the-challenge)
+  - [Project Skeleton](#project-skeleton)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+    - [Built with](#built-with)
+    - [Useful resources](#useful-resources)
+  - [Author](#author)
 
-In the project directory, you can run:
+## The challenge
 
-### `yarn start`
+To create an advanced blog app with React and Firebase
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Project Skeleton
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+```
 
-### `yarn test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+|----README.md
+├── public
+│     └── index.html
+├── src
+│    ├── assets
+│    │       ├── [images]
+│    ├── auth
+│    │       ├── firebase.js
+│    ├── components
+│    │       ├── BlogCard.jsx
+│    │       └── Navbar.jsx
+│    ├── contexts
+│    │       ├── AuthContext.jsx
+│    ├── helpers
+│    │       └── toastNotify.js
+│    ├── pages
+│    │       ├── Dashboard.jsx
+│    │       ├── Details.jsx
+│    │       ├── Login.jsx
+│    │       ├── NewBlog.jsx
+│    │       ├── Profile.jsx
+│    │       ├── Register.jsx
+│    │       └── UpdateBlog.jsx
+|    ├── router
+│    │       ├── AppRouter.jsx
+│    │       └── PrivateRouter.jsx
+│    ├── utils
+│    │       └── functions.js
+│    ├── App.js
+│    ├── App.css
+│    ├── index.js
+│    └── index.css
+├── .env
+├── package.json
+└── yarn.lock
+```
 
-### `yarn build`
+## Screenshot
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<p align="center">
+<a href="https://murathudavendigar.github.io/fireblog-app-react/"><img src="https://lh3.googleusercontent.com/pw/AL9nZEXpRYTDZ0aZmOVu7jFoZfac54Gg7uPyvgInvRmp6j3qqtrYivDDLZdJYht3bEKvn-GzYP5p1DaRpKf30-a3lGAt7J2RUUDKbhBlVfJYyCJF_2LND2pB7nhV71KIZBaoOm4zxkDQU491H6mkkNGlFdHfzYviNibhOAmMnvdvRw0XQtv0Rf1b2_E8WjoXFHEhzC02GZ_cofCXsOeuYuriDjAOZlbjYAcLcJSc32Z-nvL6LjdeyhK6tmK8B3rLjM4_lM9tkcEBOHH95rydHBhGct9fbnKVuQ8y9KxtmLloPuSGeljjo8Usrueahyk1SLTi8PQ7COAH-63A5iZESmpC23B33sDl8RmttsM10J5sEF6O6uC-8YNKYbP2LAAnvI4HSUdorVcD8frJlMmpOPL4BwYSbgOKUdfVP2Pqx2G0iT-HoU2hYKgOTOrEv9fKTWngB_MNWnu7-609cVwnlT8g0AKP8Ire8XpmV-NE-68grDdH3JvSVIdCCWwBdBNUFhcqd8PBW7OIV3_bGtAG6We0K8OYoDa2Y8Fs9X7q3cnXoEWmDPSPcrOtQJn042uUxW7-TV4tdmLqH-D6VzHMbmGgoG5DrBo7lW9VIEu1cGrs8JZIl4ffHH8NtJcButUgxSV5SHIN0tyFZasV0RNXynz8A94Ur7x-y9wLVj5r4V6bJMKgsOlzpxD0b8z43xUYHuBNhonODWVoDqYZ0ZYmad_QYJU7agtf57KDAqt_7LMK_9WI5rv2nisqHr5a1-AmaXdKw0aO02_yADejc0jDJzIhxr-Ua474DPCyUqzI2uXvb8X5MeacHrVvrw_pHouiDiQJ8Zy3kCnnXIYpRsn-GijnvBEBdjkIAevulFEU-6paRc-F68Vm-rP-Jca5bbKBKZ46H4X7m_sXjyavbVYjAFn7FtKV=w475-h220-no?authuser=0" alt="screenshot"></a>
+</p>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Links
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<hr>
+<b>Check The Live Website ➡️</b> <a href="https://murathudavendigar.github.io/fireblog-app-react/">Live Website</a>
+<hr>
 
-### `yarn eject`
+### Built with
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- React Components, props, states, hooks
+- API GET,POST,DELETE and UPDATE requests (axios)
+- JSX Elements
+- CSS custom properties
+- Flexbox
+- CSS Grid
+- TailwindCSS
+- Firebase Auth
+- Firebase Database
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Useful resources
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- [W3 Schools](https://www.w3schools.com/) - This helped me for basics of website paradigm. I really liked this pattern and will use it going forward.
+- [MDN](https://developer.mozilla.org/en-US/) - This is an amazing document which helped me finally understand deep sides of web development.
+- [Clarusway](https://firebase.google.com/) - This website has very understandable documentation. And I really took advantage of that.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Author
 
-## Learn More
+- Author - [Murat Hüdavendigâr]
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<center> &#8987; Happy Coding  &#9997; </center>
