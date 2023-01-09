@@ -65,7 +65,7 @@ To create an advanced blog app with React and Firebase
 ## Screenshot
 
 <p align="center">
-<a href="https://murathudavendigar.github.io/fireblog-app-react/"><img src="https://media-exp1.licdn.com/dms/image/C4D22AQG1TNPkPVWNhw/feedshare-shrink_800/0/1669823576628?e=1672876800&v=beta&t=cz18JaR2CbWLyrJxNrhtngnrFWLQa6NljboAZHVrdgM" alt="screenshot"></a>
+<a href="https://murathudavendigar.github.io/fireblog-app-react/"><img src="https://media.licdn.com/dms/image/C4D22AQG1TNPkPVWNhw/feedshare-shrink_800/0/1669823576628?e=1675900800&v=beta&t=qOZOR9xYe5f-jmLrAvtEtWxQI-oK4mVcK2I0kmW_2w0"></a>
 </p>
 
 ## Links
